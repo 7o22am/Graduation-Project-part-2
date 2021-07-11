@@ -1,0 +1,22 @@
+<?php
+
+    require_once './vendor/autoload.php';
+
+    use Kreait\Firebase\Factory;
+
+    $factory = (new Factory())
+    ->withDatabaseUri('https://amrphp-69e22-default-rtdb.firebaseio.com');
+    $database = $factory->createDatabase();
+    $database->getReference('config/website')
+        ->set([
+            'id'=>"1",
+            'name' => 'My Application',
+            'emails' => [
+                'support' => 'suppor@ddddd',
+                'sales' => 'sales@dwwwww',
+            ],
+            'website' => 'https://app.domain.tld',
+        ]);
+
+    $database->getReference('config/website/name')->set('Amr Ragab');
+///////////////////////////////////////////////////////////////////////////////////////////

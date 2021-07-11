@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/firebase/vendor/kreait/gcp-metadata" />
+      <path value="$PROJECT_DIR$/firebase/vendor/kreait/clock" />
+      <path value="$PROJECT_DIR$/firebase/vendor/kreait/firebase-php" />
+      <path value="$PROJECT_DIR$/firebase/vendor/kreait/firebase-tokens" />
+      <path value="$PROJECT_DIR$/firebase/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/firebase/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/firebase/vendor/composer" />
+      <path value="$PROJECT_DIR$/firebase/vendor/riverline/multipart-parser" />
+      <path value="$PROJECT_DIR$/firebase/vendor/grpc/grpc" />
+      <path value="$PROJECT_DIR$/firebase/vendor/fig/http-message-util" />
+      <path value="$PROJECT_DIR$/firebase/vendor/giggsey/locale" />
+      <path value="$PROJECT_DIR$/firebase/vendor/giggsey/libphonenumber-for-php" />
+      <path value="$PROJECT_DIR$/firebase/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/firebase/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/firebase/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/firebase/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/firebase/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/firebase/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/firebase/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/firebase/vendor/superbalist/flysystem-google-storage" />
+      <path value="$PROJECT_DIR$/firebase/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/firebase/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/firebase/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/firebase/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/firebase/vendor/google/gax" />
+      <path value="$PROJECT_DIR$/firebase/vendor/google/protobuf" />
+      <path value="$PROJECT_DIR$/firebase/vendor/google/grpc-gcp" />
+      <path value="$PROJECT_DIR$/firebase/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/firebase/vendor/google/crc32" />
+      <path value="$PROJECT_DIR$/firebase/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/firebase/vendor/rize/uri-template" />
+      <path value="$PROJECT_DIR$/firebase/vendor/google/common-protos" />
+      <path value="$PROJECT_DIR$/firebase/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/firebase/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/firebase/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/firebase/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/firebase/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/firebase/vendor/mtdowling/jmespath.php" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
+</project>

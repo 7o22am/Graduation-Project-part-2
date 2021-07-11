@@ -1,0 +1,19 @@
+{
+    "name": "ecc/firebase",
+    "description": "amrphp",
+    "type": "project",
+    "license": "GNU3",
+    "authors": [
+        {
+            "name": "Arthur Systems",
+            "email": "admin@arthur.systems"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {"kreait/firebase-php": "^4.17.0",
+        "php": ">=7.2.27",
+        "grpc/grpc": "^v1.27.0",
+        "google/protobuf": "^v3.3.0"
+        },
+    "grpc/grpc": "~1.30.0"
+}
