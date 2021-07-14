@@ -1,21 +1,21 @@
 <?php 
 
- if(isset($_POST["user"])){
+ if(isset($_POST["pass"])){
 
     include("db.php");
-    $sql = "select username from userr where username =?";
+    $sql = "select passwordd from userr where passwordd =?";
     $q = $db->prepare( $sql ) ;
-    $q->execute( [ $_POST["user"] ] ) ;
+    $q->execute( [ $_POST["pass"] ] ) ;
 
     if($q->rowCount() == 1){
         include("db.php");
         $sql="update userr set passwordd ='".$_POST['password']."' where id = 1 " ;
         $q = $db->prepare($sql);
         $q->execute();
-        header("Location:login.php");
+        header("Location:index.php");
     }
     else{
-        echo "<h2 class='alert'>Please Check UserName !...</h2>";
+        echo "<h2 class='alert'>Please Check  Password!...</h2>";
     }
     
  }?>
@@ -29,9 +29,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <title>Login</title>
+    <title>Change Password</title>
 </head>
-<body class="bg-primary">
+<body class="bg-info">
     <div class="container">
         <div class="d-flex justify-content-center mt-5">
           <div class="login">
@@ -41,8 +41,8 @@
             <div class="form pt-3">
                 <form method="POST">
                     <div class="form-group pt-3">
-                        <label for="user">User Name</label> <br>
-                        <input type="text" name="user" required class="email" >
+                        <label for="password">Password</label> <br>
+                        <input type="password" name="pass" required class="email" >
                     </div>
                     <div class="form-group pt-3">
                         <label for="password">Change Password</label> <br>

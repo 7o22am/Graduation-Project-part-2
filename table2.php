@@ -11,6 +11,8 @@
 
         $day_arr = array('Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday');
 
+        $postRef = $database->getReference('table2')->remove();
+
         for($i=0; $i<7; $i++){
 
         $sql1 = "SELECT * FROM lect2  where day = '$day_arr[$i]'";
@@ -25,7 +27,7 @@
         $time = $row['timee'];
         $num = $row['modarg'];
 
-        $str = $day_doc ." "." "." - " ." "." ". $doctor_doc." "." "." - " ." "." ".$day_sub ." "." "." - " ." "." ". $time ." "." "." - " ." "." ". $num;
+        $str = $day_doc ." - ". $doctor_doc." - ".$day_sub ." - ". $time ." - ". $num;
         $postRef = $database->getReference('table2')->push( $str );
     }
 }
@@ -38,9 +40,10 @@ if ($res2) {
         $section = $row['section'];
         $class = $row['class'];
 
-        $str =  $day_doc ." "." "." - " ." "." ". $doctor_doc ." "." "." - " ." "." ".$day_sub ." "." "." - " ." "." ". $time ." "." "." - " ." "." ".$section." "." "." - " ." "." ". $class;
+        $str =  $day_doc ." - ". $doctor_doc ." - ".$day_sub ." - ". $time ." - ".$section." - ". $class;
         $postRef = $database->getReference('table2')->push( $str );
     }
 }
         }
+        header("Location:index.php");
 ?>

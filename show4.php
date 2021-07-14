@@ -84,8 +84,8 @@
                   <th style="background-color: #fff;color: #000">Lectuer Name</th>
                     <th style="background-color: #FF9A00;color: #fff">Subject</th>
                     <th style="background-color: #E83A44;color: #fff">Day</th>
-                    <th style="background-color: #07B9C9;color: #fff">Time</th>
-                    <th style="background-color: #FF9A00;color: #fff">Section</th>
+                    <th style="background-color: #07B9C9;color: #fff">Subject Hours</th>
+                    <th style="background-color: #E83A44;color: #fff">Time</th>
                     <th style="background-color: #FF9A00;color: #fff">Group</th>
                     <th style="background-color: #E83A44;color: #fff">Class</th>
                     <th style="background-color: #07B9C9;color:#fff">Delete</th>

@@ -40,22 +40,6 @@
 </style>
 </head>
 <body >
-    <!-- Start NavBar -->
-
-     <!--   <nav class="navpar">
-                <div class="links bg-faded">
-                <a href="sec.php">Home</a>
-                    <a href="show_sec.php">Show Group1</a>
-                    <a href="show_sec2.php">Show Group2</a>
-					<a href="show_sec3.php">Show Group3</a>
-					<a href="show_sec4.php">Show Group4</a>
-                   <!-- <a href="Feedback.php">Feedback</a> -->
-                <!-- </div> -->
-        <!-- </nav>   -->
-
-
-    <!-- End NavBar -->
-    <!-- Start Header -->
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,9 +56,7 @@
       <li class="nav-item">
         <a class="nav-link" href="show_sec2.php">Show Group2</a>
       </li>
-       <!-- <li class="nav-item">
-        <a class="navbar-brand" style="color:#fbb034;font-size:25px;padding-left: 10px" href="lectuer.php">Home</a>
-      </li> -->
+       
       <li class="nav-item">
         <a class="nav-link" href="show_sec3.php">Show Group3</a>
       </li>
@@ -86,27 +68,6 @@
   
   </div>
 </nav>
-
-    <!-- End Header -->
-	<!-- Satrt Head -->
-
-     <!--    <div class="row ">
-            <div class="col-12 header">
-                <div class="col-3">
-                    <img src="img/assiut.jpeg">
-                </div>
-                <div class="col-6">
-                    <h2>
-                     Faculty of Computing and Information</h2>
-                </div>
-                <div class="col-3">
-                 <img src="img/fci.jpeg">
-                </div>
-            </div>
-        </div> -->
-
-        <!-- End Head -->
-    <!-- Start Table -->
 	
 
     <div class="d-flex justify-content-center mt-5">
@@ -146,11 +107,6 @@
                         <td><?php echo $d['timee'];?></td>
                         <td><?php echo $d['section'];?></td>
                         <td><?php echo $d['class'];?></td>
-                        <!-- <td><a href="update.php?id=<?php echo $d['id'];?>"><i class="fa fa-pencil-square-o" aria-hidden="true" style="cursor: pointer;"></i></a></td> -->
-                        
-
-    
-
                         <td class="wrapper"><a href="delete6.php?ids=<?php echo $d['id'];?>"><i class="fa fa-trash-o" aria-hidden="true" style="cursor: pointer; color:red" ></i></a></td>
                     
                 </tr>
@@ -161,8 +117,6 @@
             </tbody>
             
             <!-- Table Body -->
-
-        </table>
     </div>    
 
     <!-- Start Table -->

@@ -1,5 +1,11 @@
 <?php
 
+    session_start();
+
+            if( !isset($_SESSION["user"]) )
+            {
+                header("Location:login.php");
+            }
 function push($name, $modarg, $level, $subject, $hourss, $day, $times)
 {
     $ret ="false";
@@ -83,20 +89,20 @@ function push($name, $modarg, $level, $subject, $hourss, $day, $times)
                 if ($name == $doctor_doc && $day == $day_doc && (($times == $time )||($start == $start_db || $end == $end_db )|| (($start > $start_db && $start < $end_db ) ||
                         ($end > $start_db  && $end <$end_db)))) {
                     //this condtion will be replace
-                     //echo "<script>alert('in level $i , Doctor is busy in this time ...')</script>";
+                    // echo "<script>alert('in level $i , Doctor is busy in this time ...')</script>";
                     return $ret = "false";
 
                 }
                 if ($day == $day_doc && $num == $modarg && (($times == $time )||($start == $start_db || $end == $end_db )|| (($start > $start_db && $start < $end_db ) ||
                             ($end > $start_db  && $end <$end_db)))) {
-                    // echo "<script>alert('in level $i , This Modarge is busy in this time ...')</script>";
+                  //   echo "<script>alert('in level $i , This Modarge is busy in this time ...')</script>";
                     return $ret = "false";
 
 
                 }
                 if ($level == $gropp && ($day == $day_doc)&&(($times == $time )||($start == $start_db || $end == $end_db )|| (($start > $start_db && $start < $end_db ) ||
                             ($end > $start_db  && $end <$end_db)))) {
-                      // echo "<script>alert('in level $i , This student is busy in this time ...')</script>";
+                       //echo "<script>alert('in level $i , This student is busy in this time ...')</script>";
 
                     return $ret = "false";
 
@@ -203,15 +209,15 @@ if(isset($_POST['save'])) {
 
     $start = (int)($l);
     $end = (int)($f);
-
-    $p1=$start;
-    $p2=$end;
+    $p1 = $start ;
+    $p2 = $end ;
     if($p1<8)$p1=$p1+12;
     if($p2<8)$p2=$p2+12;
     if(!(($p1>=8 && $p1<=18 )&& ($p2>=8 && $p2<=18 ) && ($p1<$p2)))
     {
+        // header("Location:lectuer.php");
         echo "<script>alert(' time inviled  sorry  ...')</script>";
-         exit();
+        exit();
     }
 
     if ($start <= $end) {
@@ -220,6 +226,7 @@ if(isset($_POST['save'])) {
         $ans = 12 - $start + $end;
 
     }
+    
     if ($ans < $hourss) {
         echo "<script>alert(' time less than $hourss hours  ...')</script>";
         exit();
@@ -473,7 +480,7 @@ if(isset($_POST['save'])) {
         typeSpeed: 100,
             backSpeed: 100,
             loop: true,
-                showCursor: false,
+                showCursor: false,  
         backDelay: 1000,
         };
         var typed = new Typed('.txt', options);

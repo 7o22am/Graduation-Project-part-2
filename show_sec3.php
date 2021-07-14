@@ -70,28 +70,6 @@
   
   </div>
 </nav>
-
-
-    <!-- End NavBar -->
-	<!-- Satrt Head -->
-
-      <!--   <div class="row ">
-            <div class="col-12 header">
-                <div class="col-3">
-                    <img src="img/assiut.jpeg">
-                </div>
-                <div class="col-6">
-                    <h2>
-                     Faculty of Computing and Information</h2>
-                </div>
-                <div class="col-3">
-                 <img src="img/fci.jpeg">
-                </div>
-            </div>
-        </div> -->
-
-        <!-- End Head -->
-    <!-- Start Table -->
 	
 
     <div class="d-flex justify-content-center mt-5">
@@ -105,6 +83,7 @@
                     <th style="background-color: #E83A44;color: #fff">Day</th>
                     <th style="background-color: #07B9C9;color: #fff">Time</th>
                     <th style="background-color: #FF9A00;color: #fff">Section</th>
+                    <th style="background-color: #07B9C9;color: #fff">Group</th>
                     <th style="background-color: #E83A44;color: #fff">Class</th>
                     <th style="background-color: #07B9C9;color:#fff">Delete</th>
                 </tr>
@@ -118,7 +97,7 @@
                   $day_arr = array('Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday');
                   for($i=0; $i<7; $i++){
                   include("db.php");
-                  $sql = "select id , name_lect  , subject , Dayy , timee , section ,class  from sec3  where Dayy = '$day_arr[$i]'";
+                  $sql = "select id , name_lect  , subject , Dayy , timee , section , groupp ,class  from sec3  where Dayy = '$day_arr[$i]'";
                   $q = $db->prepare($sql) ;
                   $q->execute();
                   $data = $q->fetchAll();
@@ -131,6 +110,7 @@
                         <td><?php echo $d['Dayy'];?></td>
                         <td><?php echo $d['timee'];?></td>
                         <td><?php echo $d['section'];?></td>
+                        <td><?php echo $d['groupp'];?></td>
                         <td><?php echo $d['class'];?></td>
                         <!-- <td><a href="update.php?id=<?php echo $d['id'];?>"><i class="fa fa-pencil-square-o" aria-hidden="true" style="cursor: pointer;"></i></a></td> -->
                         <td class="wrapper"><a href="delete8.php?ids=<?php echo $d['id'];?>"><i class="fa fa-trash-o" aria-hidden="true" style="cursor: pointer; color:red" ></i></a></td>

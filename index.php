@@ -32,7 +32,7 @@
 		 width: 100%;
   		text-align: center;
   		position: relative;
-		margin-top: 100px
+		margin-top: 20px
 
 		}
 
@@ -59,22 +59,45 @@
 			font-size:35px;
 
 		}
+		.links{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 
 	</style>
 </head>
 <body>
 	<div class="container">
-		<div class="link">
-			<a href="lectuer.php" class="lec">Lecture</a>
-		</div>
-		<div class="link">
-			<a href="sec.php" class="lec">Section</a>
-		</div>
-		<div class="link">
-			<a href="Feedback.php" class="lec">Feedback</a>
-		</div>
-		<div class="link">
-			<a href="change.php" class="lec">Change Password</a>
+		<div class="links">
+			<div class="">
+				<div class="link">
+					<a href="lectuer.php" class="lec">Lecture</a>
+				</div>
+				<div class="link">
+					<a href="sec.php" class="lec">Section</a>
+				</div>
+				<div class="link">
+					<a href="Feedback.php" class="lec">Feedback</a>
+				</div>
+				<div class="link">
+					<a href="change.php" class="lec">Change Password</a>
+				</div>
+			</div>
+			<div class="">
+				<div class="link">
+					<a href="table1.php" class="lec">Up Data 1</a>
+				</div>
+				<div class="link">
+					<a href="table2.php" class="lec">Up Data 2</a>
+				</div>
+				<div class="link">
+					<a href="table3.php" class="lec">Up Data 3</a>
+				</div>
+				<div class="link">
+					<a href="table4.php" class="lec">Up Data 4</a>
+				</div>
+			</div>
 		</div>
 		<div class="link">
 			<a href="logout.php" class="lec">Log Out</a>

@@ -1,4 +1,10 @@
 <?php
+    session_start();
+
+    if( !isset($_SESSION["user"]) )
+    {
+        header("Location:login.php");
+    }
 $new_time="";
 function check($name_lect ,  $Dayy ,$timee , $class, $grop , $sect)
 {
@@ -25,6 +31,7 @@ function check($name_lect ,  $Dayy ,$timee , $class, $grop , $sect)
 
     $start = (int)($l);
     $end = (int)($f);
+
     $p1=$start;
     $p2=$end;
     if($p1<8)$p1=$p1+12;
@@ -34,6 +41,8 @@ function check($name_lect ,  $Dayy ,$timee , $class, $grop , $sect)
         echo "<script>alert(' time inviled  sorry  ...')</script>";
         return $ckk="false";
     }
+
+
     //check time
     if($start <= $end)
     {
@@ -109,8 +118,8 @@ function check($name_lect ,  $Dayy ,$timee , $class, $grop , $sect)
                 if ($start_db < 8) $start_db = $start_db + 12;
                 if ($start < 8) $start = $start + 12;
                 if ($end_db < 8) $end_db = $end_db + 12;
-                if ($name_lect == $doctor_doc && ($Dayy == $day_doc )&& (($start == $start_db || $end == $end_db )|| ($timee == $time) || ($start > $start_db && $start < $end_db ) ||
-                            ($end > $start_db  && $end <$end_db))) {
+                if ($name_lect == $doctor_doc && ($Dayy == $day_doc )&& (($start == $start_db || $end == $end_db )|| ($timee == $time) || (($start > $start_db && $start < $end_db ) ||
+                            ($end > $start_db  && $end <$end_db)))) {
                     //this condtion will be replace
                     echo "<script>alert('in sec $i , Doctor is busy in this time ...')</script>";
                     return $ckk = "false";
@@ -135,7 +144,7 @@ function check($name_lect ,  $Dayy ,$timee , $class, $grop , $sect)
 
     }
     if ($ress[(int)($grop)]) {
-
+        
         while ($row = mysqli_fetch_assoc($ress[(int)($grop)])) {
             $doctor_doc = $row['name_doc'];
             $day_doc = $row['day'];
@@ -162,7 +171,6 @@ function check($name_lect ,  $Dayy ,$timee , $class, $grop , $sect)
             if($start_db<8)$start_db=$start_db+12;
             if($start<8)$start=$start+12;
             if($end_db<8)$end_db=$end_db+12;
-
             if (  $Dayy == $day_doc && (($start == $start_db || $end == $end_db )|| ($timee == $time) || (($start > $start_db && $start < $end_db ) ||
                     ($end > $start_db  && $end <$end_db)))) {
                 //this condtion will be replace
@@ -313,7 +321,15 @@ if(isset($_POST["save"])) {
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
+                            <option value="3is">Three-IS</option>
+                            <option value="3it">Three-IT</option>
+                            <option value="3cs">Three-CS</option>
+                            <option value="3mm">Three-MM</option>
                             <option value="4">Four</option>
+                            <option value="4is">Four-IS</option>
+                            <option value="4it">Four-IT</option>
+                            <option value="4cs">Four-CS</option>
+                            <option value="4mm">Four-MM</option>
                         </select>
                     </div>
                     <!-- Group Number -->
@@ -339,12 +355,35 @@ if(isset($_POST["save"])) {
 
                             <br>
                             <tr>
-                                <td><input type="text" name="Day[]" placeholder="Enter your Day" class="form-control name_list" /></td>
-                                <td><input type="text" name="timee[]" placeholder="Enter your Time" class="form-control name_list" /></td>
-                                <td><input type="text" name="section[]" placeholder="Enter your section" class="form-control name_list" /></td>
                                 <td>
-                                    <input type="text" name="class[]" placeholder="Enter your Class" class="form-control name_list" />
+                                <div  class="input-group mb-3">
+                                    <select  name="Day[]" required class="custom-select custom-select-m">
+                                <option  selected disabled="disabled">Subject day</option>
+                                <option value="Sunday">Sun</option>
+                                <option value="Monday">Mon</option>
+                                <option value="Tuesday">Tues</option>
+                                <option value="Wednesday">Wen</option>
+                                <option value="Thursday">Thrus</option>
+                                </select>
+                                </div>
                                 </td>
+                                <!-- <td><input type="text" name="Day[]" placeholder="Enter your Day" class="form-control name_list" /></td> -->
+                                <td><input type="text" name="timee[]" placeholder="Enter your Time" class="form-control name_list" /></td>
+                                <td>
+                                    <div class="input-group mb-3">
+										<select name="section[]" required class ="custom-select custom-select-m">
+											<option selected disabled ="disabled">Section Number</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+									</div>
+								</td>
+                                <!-- <td><input type="text" name="section[]" placeholder="Enter your section" class="form-control name_list" /></td> -->
+                                <td>
+									<div class="input-group mb-3">
+										<select name="class[]" required class ="custom-select custom-select-m"><option selected disabled ="disabled">Class</option><option value="L0a">L0a</option><option value="L0b">L0b</option><option value="L0c">L0c</option><option value="L0d">L0d</option><option value="L0e">L0e</option><option value="L1a">L1a</option><option value="L1b">L1b</option><option value="L1c">L1c</option><option value="L1d">L1d</option><option value="L1e">L1e</option><option value="m1a">m1a</option><option value="L2a">L2a</option><option value="L2b">L2b</option><option value="L2c">L2c</option><option value="L2d">L2d</option><option value="L2e">L2e</option><option value="m2a">m2a</option><option value="L3a">L3a</option><option value="L3b">L3b</option><option value="L3c">L3c</option><option value="L3d">L3d</option><option value="L3e">L3e</option><option value="m3a">m3a</option><option value="L4a">L4a</option><option value="L4b">L4b</option><option value="L4c">L4c</option><option value="L4d">L4d</option><option value="L4e">L4e</option><option value="m4a">m4a</option><option value="M1">M1</option><option value="M2">M2</option><option value="M3">M3</option><option value="M4">M4</option><option value="M5">M5</option><option value="M6">M6</option><option value="M7">M7</option><option value="M8">M8</option><option value="M9">M9</option></select>
+									</div>
+                                </td>
+                                <!-- <td>
+                                    <input type="text" name="class[]" placeholder="Enter your Class" class="form-control name_list" />
+                                </td> -->
                                 <td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td>
                             </tr>
                         </table>
